@@ -1,40 +1,69 @@
 package com.memories.memories_recorder.ui.theme
 
+import androidx.compose.runtime.compositionLocalOf
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-object Dimens {
-    // Font sizes (use .sp for text – scales with user font settings)
-    val textSizeSmall = 12.sp
-    val textSizeMedium = 14.sp
-    val textSizeLarge = 16.sp
-    val textSizeTitle = 20.sp
-    val textSizeHeading = 24.sp
-    val textSizeDisplay = 32.sp
+data class Dimens(
+    val textSm: TextUnit,
+    val textMd: TextUnit,
+    val textLg: TextUnit,
+    val textXl: TextUnit,
 
-    // Spacing & padding (use .dp – does NOT scale with font size)
-    val spacingTiny = 4.dp
-    val spacingSmall = 8.dp      // Most common base unit (8dp grid)
-    val spacingMedium = 16.dp     // Standard padding in Material
-    val spacingLarge = 24.dp
-    val spacingHuge = 32.dp
+    val spaceXs: Dp,
+    val spaceSm: Dp,
+    val spaceMd: Dp,
+    val spaceLg: Dp,
+    val space2lg: Dp,
+    val spaceXl: Dp,
+    val space2xl: Dp,
+    val space3xl: Dp,
+    val space325xl: Dp,
+    val space5xl: Dp,
+    val space95xl: Dp,
 
-    // Icon / component sizes
-    val iconSizeSmall = 16.dp
-    val iconSizeMedium = 24.dp     // Standard icon button size
-    val iconSizeLarge = 32.dp
+    val radiusSm: Dp,
+    val radiusMd: Dp,
+    val radiusLg: Dp,
 
-    // Border radius (corner radius for buttons, cards, chips...)
-    val cornerRadiusSmall = 8.dp
-    val cornerRadiusMedium = 12.dp   // Common for buttons
-    val cornerRadiusLarge = 16.dp   // Common for cards
-    val cornerRadiusExtraLarge = 28.dp   // For large sheets or dialogs
+    val iconSm: Dp,
+    val iconMd: Dp,
+    val iconLg: Dp,
 
-    // Elevation / shadow (for Card, Surface elevation in Material 3)
-    val elevationSmall = 2.dp
-    val elevationMedium = 4.dp
+    val buttonHeight: Dp,
+    val screenPadding: Dp
+)
 
-    // Component heights
-    val buttonHeight = 48.dp     // Material 3 recommended button height
-    val cardHeightSmall = 80.dp
+val LocalDimens = compositionLocalOf {
+    Dimens(
+        textSm = 14.sp,
+        textMd = 16.sp,
+        textLg = 18.sp,
+        textXl = 24.sp,
+
+        spaceXs = 4.dp,  // 4
+        spaceSm = 8.dp,   // 8
+        spaceMd = 12.dp, // 12
+        spaceLg = 16.dp, // 16
+        space2lg = 18.dp,
+        spaceXl = 24.dp,  // 24
+        space2xl = 32.dp, // 32
+        space3xl = 48.dp,
+        space325xl = 52.dp,
+        space5xl = 80.dp,
+        space95xl = 152.dp,
+
+        radiusSm = 8.dp,
+        radiusMd = 12.dp,
+        radiusLg = 16.dp,
+
+        iconSm = 16.dp,
+        iconMd = 24.dp,
+        iconLg = 32.dp,
+
+        buttonHeight = 48.dp,
+        screenPadding = 24.dp
+    )
 }

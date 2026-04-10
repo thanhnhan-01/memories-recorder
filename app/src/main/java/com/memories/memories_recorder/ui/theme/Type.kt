@@ -7,11 +7,11 @@ import androidx.compose.ui.unit.sp
 
 // Set of Material typography styles to start with
 val Typography = Typography(
-    // Display styles
+    // 🔥 DISPLAY (Hero, splash, landing)
     displayLarge = TextStyle(
         fontFamily = Manrope,
         fontWeight = FontWeight.Bold,
-        fontSize = Dimens.textSizeDisplay,  // 32.sp
+        fontSize = 32.sp,
         lineHeight = 40.sp
     ),
     displayMedium = TextStyle(
@@ -20,37 +20,74 @@ val Typography = Typography(
         fontSize = 28.sp,
         lineHeight = 36.sp
     ),
+    displaySmall = TextStyle(
+        fontFamily = Manrope,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 24.sp,
+        lineHeight = 32.sp
+    ),
 
-    // Headline / Title
+    // 🔥 HEADLINE (screen title)
     headlineLarge = TextStyle(
         fontFamily = Manrope,
         fontWeight = FontWeight.Bold,
-        fontSize = Dimens.textSizeHeading,  // 24.sp
+        fontSize = 24.sp,
         lineHeight = 32.sp
     ),
+    headlineMedium = TextStyle(
+        fontFamily = Manrope,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 20.sp,
+        lineHeight = 28.sp
+    ),
+    headlineSmall = TextStyle(
+        fontFamily = Manrope,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 18.sp,
+        lineHeight = 26.sp
+    ),
+
+    // 🔥 TITLE (section title, card title)
     titleLarge = TextStyle(
         fontFamily = Manrope,
         fontWeight = FontWeight.SemiBold,
-        fontSize = Dimens.textSizeTitle,    // 20.sp
+        fontSize = 20.sp,
         lineHeight = 28.sp
     ),
-
-    // Body Text
-    bodyLarge = TextStyle(
+    titleMedium = TextStyle(
         fontFamily = Manrope,
-        fontWeight = FontWeight.Normal,
-        fontSize = Dimens.textSizeLarge,    // 16.sp
+        fontWeight = FontWeight.Medium,
+        fontSize = 16.sp,
         lineHeight = 24.sp
     ),
-
-    bodyMedium = TextStyle(
+    titleSmall = TextStyle(
         fontFamily = Manrope,
-        fontWeight = FontWeight.Normal,
-        fontSize = Dimens.textSizeMedium,   // 14.sp
+        fontWeight = FontWeight.Medium,
+        fontSize = 14.sp,
         lineHeight = 20.sp
     ),
 
-    // Label / small text
+    // 🔥 BODY (text)
+    bodyLarge = TextStyle(
+        fontFamily = Manrope,
+        fontWeight = FontWeight.Normal,
+        fontSize = 16.sp,
+        lineHeight = 24.sp
+    ),
+    bodyMedium = TextStyle(
+        fontFamily = Manrope,
+        fontWeight = FontWeight.Normal,
+        fontSize = 14.sp,
+        lineHeight = 20.sp
+    ),
+    bodySmall = TextStyle(
+        fontFamily = Manrope,
+        fontWeight = FontWeight.Normal,
+        fontSize = 12.sp,
+        lineHeight = 16.sp
+    ),
+
+    // 🔥 LABEL (button, small text)
     labelLarge = TextStyle(
         fontFamily = Manrope,
         fontWeight = FontWeight.Medium,
@@ -63,4 +100,10 @@ val Typography = Typography(
         fontSize = 12.sp,
         lineHeight = 16.sp
     ),
+    labelSmall = TextStyle(
+        fontFamily = Manrope,
+        fontWeight = FontWeight.Medium,
+        fontSize = 11.sp,
+        lineHeight = 14.sp
+    )
 )

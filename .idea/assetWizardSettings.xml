@@ -295,8 +295,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="logo_memories" />
-                            <entry key="sourceFile" value="D:\personal\project\front-end\mobile\android\icon\logo_memories.svg" />
+                            <entry key="outputName" value="ic_visibility_off" />
+                            <entry key="sourceFile" value="C:\Users\DELL\Downloads\ic_visibility-off.svg" />
                           </map>
                         </option>
                       </PersistentState>

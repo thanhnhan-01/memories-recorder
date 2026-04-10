@@ -1,9 +1,9 @@
-package com.memories.memories_recorder.ui.screens.auth.login
+package com.memories.memories_recorder.feature.home
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 
 @Composable
-fun LoginScreen(
+fun HomeScreen(
     navController: NavHostController,
 ) {}

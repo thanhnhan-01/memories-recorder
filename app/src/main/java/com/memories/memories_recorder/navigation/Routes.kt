@@ -1,8 +1,10 @@
-package com.memories.memories_recorder.ui.navigation
+package com.memories.memories_recorder.navigation
 
 object Routes {
+    const val AUTH = "auth"
     const val LOGIN = "login"
     const val REGISTER = "register"
+    const val FORGOT_PASSWORD = "forgot_password"
     const val HOME = "home"
     const val MEMORY = "memory"
     const val PROFILE = "profile"

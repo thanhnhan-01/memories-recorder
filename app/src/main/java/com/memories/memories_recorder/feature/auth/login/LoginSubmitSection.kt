@@ -1,0 +1,80 @@
+package com.memories.memories_recorder.feature.auth.login
+
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
+import com.memories.memories_recorder.ui.components.AppButton
+import com.memories.memories_recorder.ui.components.AppTextButton
+import com.memories.memories_recorder.ui.theme.AppDimens
+import com.memories.memories_recorder.ui.theme.dimens
+
+@Composable
+fun LoginSubmitSection(
+    isLoading: Boolean,
+    errorMessage: String?,
+    onRegisterClick: () -> Unit,
+    onModeChange: () -> Unit,
+    onSubmit: () -> Unit,
+) {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(MaterialTheme.dimens.spaceXl),
+    ) {
+        if (errorMessage != null) {
+            Text(
+                text = errorMessage,
+                color = MaterialTheme.colorScheme.error,
+                style = MaterialTheme.typography.bodyMedium
+            )
+        }
+
+//        AppButton(
+//            text = "Login",
+//            onClick = onSubmit,
+//            enabled = !isLoading,
+//            fontWeight = FontWeight.Bold,
+//            containerColor = MaterialTheme.colorScheme.onBackground,
+//            contentColor = MaterialTheme.colorScheme.onPrimary,
+//            shape = RoundedCornerShape(MaterialTheme.dimens.radiusSm),
+//            modifier = Modifier.fillMaxWidth()
+//        )
+
+        AppButton(
+            text = "Login",
+            onClick = onSubmit,
+            enabled = !isLoading,
+            modifier = Modifier.fillMaxWidth()
+        )
+
+        // Switch mode link (Register <-> Login)
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Text(
+                text = "Don't have an account? ",
+                style = MaterialTheme.typography.bodyMedium.copy(
+                    fontSize = MaterialTheme.dimens.textMd
+                )
+            )
+
+            AppTextButton(
+                text = "Register?",
+                onClick = onRegisterClick,
+                style = MaterialTheme.typography.bodyMedium.copy(
+                    fontSize = MaterialTheme.dimens.textMd  ,
+                    fontWeight = FontWeight.Bold
+                ),
+            )
+        }
+    }
+}

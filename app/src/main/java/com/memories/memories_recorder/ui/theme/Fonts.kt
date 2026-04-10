@@ -5,11 +5,6 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import com.memories.memories_recorder.R
 
-/**
- * Manrope FontFamily with common weights.
- * Assumes font files are in res/font/ with names like manrope_regular.ttf
- */
-
 val Manrope = FontFamily(
     Font(R.font.manrope_regular, FontWeight.Normal),     // 400
     Font(R.font.manrope_medium, FontWeight.Medium),      // 500

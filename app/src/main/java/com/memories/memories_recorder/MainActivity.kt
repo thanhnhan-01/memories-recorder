@@ -4,11 +4,13 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.rememberNavController
-import com.memories.memories_recorder.ui.navigation.NavGraph
-import com.memories.memories_recorder.ui.navigation.Routes
+import com.memories.memories_recorder.navigation.NavGraph
+import com.memories.memories_recorder.navigation.Routes
 import com.memories.memories_recorder.ui.theme.MemoriesRecorderTheme
+import com.memories.memories_recorder.ui.utils.AppWrapContent
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,7 +18,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MemoriesRecorderTheme {
-                AppNavigation() // NavGraph
+                AppWrapContent {
+//                    AppNavigation()
+                    Text("Hello World")
+                }
             }
         }
     }
@@ -31,4 +36,3 @@ fun AppNavigation() {
         startDestination = Routes.LOGIN
     )
 }
-
