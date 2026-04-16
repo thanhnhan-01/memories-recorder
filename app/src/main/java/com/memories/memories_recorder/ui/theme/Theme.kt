@@ -32,12 +32,6 @@ val MaterialTheme.dimens: Dimens // MaterialTheme.dimens
     @Composable
     get() = LocalDimens.current
 
-object AppDimens { // MaterialTheme.dimens
-    val current: Dimens
-        @Composable
-        get() = LocalDimens.current
-}
-
 @Composable
 fun MemoriesRecorderTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
@@ -53,10 +47,10 @@ fun MemoriesRecorderTheme(
         LightColorScheme
     }
 
-//    val dimens = LocalDimens.current
+    val appDimens = LocalDimens.current
 
     CompositionLocalProvider(
-        LocalDimens provides LocalDimens.current,
+        LocalDimens provides appDimens,
     ) {
         MaterialTheme(
             colorScheme = colorScheme,

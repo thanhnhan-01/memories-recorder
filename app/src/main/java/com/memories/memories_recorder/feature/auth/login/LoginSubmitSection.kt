@@ -13,7 +13,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import com.memories.memories_recorder.ui.components.AppButton
 import com.memories.memories_recorder.ui.components.AppTextButton
-import com.memories.memories_recorder.ui.theme.AppDimens
 import com.memories.memories_recorder.ui.theme.dimens
 
 @Composable
@@ -36,21 +35,14 @@ fun LoginSubmitSection(
             )
         }
 
-//        AppButton(
-//            text = "Login",
-//            onClick = onSubmit,
-//            enabled = !isLoading,
-//            fontWeight = FontWeight.Bold,
-//            containerColor = MaterialTheme.colorScheme.onBackground,
-//            contentColor = MaterialTheme.colorScheme.onPrimary,
-//            shape = RoundedCornerShape(MaterialTheme.dimens.radiusSm),
-//            modifier = Modifier.fillMaxWidth()
-//        )
-
         AppButton(
             text = "Login",
             onClick = onSubmit,
             enabled = !isLoading,
+            fontWeight = FontWeight.Bold,
+            backgroundColor = MaterialTheme.colorScheme.onBackground,
+            contentColor = MaterialTheme.colorScheme.onPrimary,
+            shape = RoundedCornerShape(MaterialTheme.dimens.radiusSm),
             modifier = Modifier.fillMaxWidth()
         )
 

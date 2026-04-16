@@ -2,7 +2,12 @@ package com.memories.memories_recorder.feature.auth.login
 
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -17,7 +22,6 @@ import androidx.compose.ui.unit.dp
 import com.memories.memories_recorder.R
 import com.memories.memories_recorder.ui.components.AppTextButton
 import com.memories.memories_recorder.ui.components.AppTextField
-import com.memories.memories_recorder.ui.theme.AppDimens
 import com.memories.memories_recorder.ui.theme.dimens
 
 @Composable

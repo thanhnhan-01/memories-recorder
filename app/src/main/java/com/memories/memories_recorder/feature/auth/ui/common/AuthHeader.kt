@@ -16,7 +16,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import com.memories.memories_recorder.R
-import com.memories.memories_recorder.ui.theme.AppDimens
 import com.memories.memories_recorder.ui.theme.dimens
 
 @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)

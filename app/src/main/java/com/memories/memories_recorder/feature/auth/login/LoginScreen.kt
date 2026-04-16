@@ -6,13 +6,16 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import com.memories.memories_recorder.feature.auth.ui.common.AuthHeader
 import com.memories.memories_recorder.navigation.Routes
-import com.memories.memories_recorder.ui.theme.AppDimens
 import com.memories.memories_recorder.ui.theme.dimens
 
 @Composable
