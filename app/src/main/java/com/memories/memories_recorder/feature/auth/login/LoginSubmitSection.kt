@@ -25,7 +25,7 @@ fun LoginSubmitSection(
 ) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(MaterialTheme.dimens.spaceXl),
+        verticalArrangement = Arrangement.spacedBy(MaterialTheme.dimens.spaceLg),
     ) {
         if (errorMessage != null) {
             Text(
@@ -36,7 +36,7 @@ fun LoginSubmitSection(
         }
 
         AppButton(
-            text = "Login",
+            text = "Sign In",
             onClick = onSubmit,
             enabled = !isLoading,
             fontWeight = FontWeight.Bold,
@@ -46,7 +46,7 @@ fun LoginSubmitSection(
             modifier = Modifier.fillMaxWidth()
         )
 
-        // Switch mode link (Register <-> Login)
+        // Switch mode link (Login <-> Register)
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.Center,
@@ -60,7 +60,7 @@ fun LoginSubmitSection(
             )
 
             AppTextButton(
-                text = "Register?",
+                text = "Sign Up",
                 onClick = onRegisterClick,
                 style = MaterialTheme.typography.bodyMedium.copy(
                     fontSize = MaterialTheme.dimens.textMd  ,

@@ -13,6 +13,6 @@ data class RegisterUiState(
     val errorMessage: String? = null,
     val passwordVisible: Boolean = false,
     val confirmPasswordVisible: Boolean = false,
-    val isTermsAccepted: Boolean = false,
+    val isAcceptedTerms: Boolean = false,
     val isSuccess: Boolean = false
 )
