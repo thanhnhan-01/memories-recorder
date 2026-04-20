@@ -1,55 +1,19 @@
 package com.memories.memories_recorder.feature.auth.login
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
-import com.memories.memories_recorder.feature.auth.ui.common.AuthHeader
 import com.memories.memories_recorder.navigation.Routes
-import com.memories.memories_recorder.ui.theme.dimens
+import com.memories.memories_recorder.ui.utils.AppWrapContent
 
 @Composable
 fun LoginScreen(
-    navController: NavHostController,
+    onRegisterClick: () -> Unit,
+    onForgotPasswordClick: () -> Unit
 ) {
-    var loginState by remember { mutableStateOf(LoginUiState()) }
-
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(MaterialTheme.dimens.spaceXl)
-            .verticalScroll(rememberScrollState()),
-        horizontalAlignment = Alignment.CenterHorizontally,
-//        verticalArrangement = Arrangement.spacedBy(Dimens.sectionSpacing)
-    ) {
-        AuthHeader()
-
-        LoginInputFields(
-            loginState = loginState,
-            onEmailChange = { loginState = loginState.copy(email = it) },
-            onPasswordChange = { loginState = loginState.copy(password = it) },
-            onPasswordVisibilityChange = {
-                loginState = loginState.copy(passwordVisible = !loginState.passwordVisible)
-            },
-            onForgotPasswordClick = { navController.navigate(Routes.FORGOT_PASSWORD) },
-        )
-
-        LoginSubmitSection(
-            isLoading = loginState.isLoading,
-            errorMessage = loginState.errorMessage,
-            onSubmit = { },
-            onModeChange = { },
-            onRegisterClick = { navController.navigate(Routes.REGISTER) },
+    AppWrapContent {
+        LoginContent(
+            onRegisterClick = onRegisterClick,
+            onForgotPasswordClick = onForgotPasswordClick
         )
     }
 }

@@ -6,7 +6,7 @@ import androidx.navigation.NavController
 
 @Composable
 fun ForgotPasswordScreen(
-    navController: NavController,
+    onBackClick: () -> Unit
 ) {
     Text("Forgot Password")
 }

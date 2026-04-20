@@ -37,7 +37,7 @@ android {
 }
 
 dependencies {
-
+    implementation("androidx.core:core-splashscreen:1.0.1")
     implementation("androidx.compose.material3:material3-window-size-class:1.4.0")
     implementation("androidx.core:core-ktx:1.18.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.10.0")

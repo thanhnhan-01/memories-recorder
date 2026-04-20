@@ -24,7 +24,7 @@ fun AppWrapContent(
 ) {
     Box(
         modifier = modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center // Center both horizontally and vertically
+        contentAlignment = Alignment.TopCenter // Center both horizontally and vertically
     ) {
         Box(
             modifier = Modifier

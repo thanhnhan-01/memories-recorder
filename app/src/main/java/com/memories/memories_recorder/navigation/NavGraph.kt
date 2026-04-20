@@ -10,27 +10,15 @@ import com.memories.memories_recorder.feature.auth.register.RegisterScreen
 import com.memories.memories_recorder.feature.home.HomeScreen
 
 @Composable
-fun NavGraph(
+fun AppNavGraph(
     navController: NavHostController,
-    startDestination: String = Routes.AUTH,
 ) {
     NavHost(
         navController = navController,
-        startDestination = startDestination
+        startDestination = Routes.LOGIN
     ) {
-        //
-        composable(route = Routes.LOGIN) {
-            LoginScreen(navController = navController)
-        }
 
-        //
-        composable(route = Routes.REGISTER) {
-            RegisterScreen(navController = navController)
-        }
-
-        composable(route = Routes.FORGOT_PASSWORD) {
-            ForgotPasswordScreen(navController = navController)
-        }
+        authGraph(navController)
 
         // Home Screen
         composable(route = Routes.HOME) {

@@ -1,7 +1,6 @@
 package com.memories.memories_recorder.navigation
 
 object Routes {
-    const val AUTH = "auth"
     const val LOGIN = "login"
     const val REGISTER = "register"
     const val FORGOT_PASSWORD = "forgot_password"
