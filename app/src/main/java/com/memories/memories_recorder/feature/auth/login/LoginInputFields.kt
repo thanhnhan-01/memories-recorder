@@ -26,7 +26,9 @@ import com.memories.memories_recorder.ui.theme.dimens
 
 @Composable
 fun LoginInputFields(
-    loginState: LoginUiState,
+    email: String,
+    password: String,
+    passwordVisible: Boolean,
     onEmailChange: (String) -> Unit,
     onPasswordChange: (String) -> Unit,
     onPasswordVisibilityChange: () -> Unit,
@@ -38,7 +40,7 @@ fun LoginInputFields(
     ) {
         // Email Field
         AppTextField(
-            value = loginState.email,
+            value = email,
             onValueChange = onEmailChange,
             placeholder = "Enter your email",
             keyboardType = KeyboardType.Email,
@@ -61,7 +63,7 @@ fun LoginInputFields(
 
         // Password Field
         AppTextField(
-            value = loginState.password,
+            value = password,
             onValueChange = onPasswordChange,
             placeholder = "Enter your password",
             keyboardType = KeyboardType.Password,
@@ -73,7 +75,7 @@ fun LoginInputFields(
                 )
             },
             trailingIcon = {
-                Crossfade(targetState = loginState.passwordVisible) { visible ->
+                Crossfade(targetState = passwordVisible) { visible ->
                     Box(
                         modifier = Modifier
                             .clickable { onPasswordVisibilityChange() }
@@ -91,7 +93,7 @@ fun LoginInputFields(
                     }
                 }
             },
-            visualTransformation = if (loginState.passwordVisible)
+            visualTransformation = if (passwordVisible)
                 VisualTransformation.None
             else
                 PasswordVisualTransformation(),

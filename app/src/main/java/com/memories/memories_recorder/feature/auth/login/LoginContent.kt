@@ -7,10 +7,6 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.memories.memories_recorder.feature.auth.ui.common.AuthHeader
@@ -18,10 +14,13 @@ import com.memories.memories_recorder.ui.theme.dimens
 
 @Composable
 fun LoginContent(
+    viewModel: LoginViewModel = androidx.lifecycle.viewmodel.compose.viewModel(),
     onForgotPasswordClick: () -> Unit,
     onRegisterClick: () -> Unit
 ) {
-    var loginState by remember { mutableStateOf(LoginUiState()) }
+    val state = viewModel.uiState
+    val isLoading = state.requestState is RequestState.Loading
+    val errorMessage = (state.requestState as? RequestState.Error)?.message
 
     Column(
         modifier = Modifier
@@ -33,19 +32,19 @@ fun LoginContent(
         AuthHeader()
 
         LoginInputFields(
-            loginState = loginState,
-            onEmailChange = { loginState = loginState.copy(email = it) },
-            onPasswordChange = { loginState = loginState.copy(password = it) },
-            onPasswordVisibilityChange = {
-                loginState = loginState.copy(passwordVisible = !loginState.passwordVisible)
-            },
+            email = state.email,
+            password = state.password,
+            passwordVisible = state.passwordVisible,
+            onEmailChange = viewModel::onEmailChange ,
+            onPasswordChange = viewModel::onPasswordChange,
+            onPasswordVisibilityChange = viewModel::onTogglePassword,
             onForgotPasswordClick = onForgotPasswordClick,
         )
 
         LoginSubmitSection(
-            isLoading = loginState.isLoading,
-            errorMessage = loginState.errorMessage,
-            onSubmit = { },
+            isLoading = isLoading ,
+            errorMessage = errorMessage  ,
+            onSubmit = viewModel::onSubmit,
             onModeChange = { },
             onRegisterClick = onRegisterClick,
         )

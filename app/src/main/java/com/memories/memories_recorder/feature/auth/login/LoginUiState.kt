@@ -7,8 +7,13 @@ package com.memories.memories_recorder.feature.auth.login
 data class LoginUiState(
     val email: String = "",
     val password: String = "",
-    val isLoading: Boolean = false,
-    val errorMessage: String? = null,
     val passwordVisible: Boolean = false,
-    val isSuccess: Boolean = false
+    val requestState: RequestState = RequestState.Idle
 )
+
+sealed class RequestState {
+    object Idle : RequestState()
+    object Loading : RequestState()
+    object Success : RequestState()
+    data class Error(val message: String) : RequestState()
+}
