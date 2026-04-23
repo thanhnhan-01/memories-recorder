@@ -7,10 +7,6 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.memories.memories_recorder.feature.auth.ui.common.AuthHeader
@@ -18,9 +14,12 @@ import com.memories.memories_recorder.ui.theme.dimens
 
 @Composable
 fun RegisterContent(
+    viewModel: RegisterViewModel = androidx.lifecycle.viewmodel.compose.viewModel(),
     onLoginClick: () -> Unit,
 ) {
-    var registerState by remember { mutableStateOf(RegisterUiState()) }
+    val state = viewModel.uiState
+    val isLoading = state.registerRequestState is RegisterRequestState.Loading
+    val errorMessage = (state.registerRequestState as? RegisterRequestState.Error)?.message
 
     Column(
         modifier = Modifier
@@ -32,24 +31,25 @@ fun RegisterContent(
         AuthHeader()
 
         RegisterInputFields(
-            registerState = registerState,
-            onEmailChange = { registerState = registerState.copy(email = it) },
-            onUserNameChange = { registerState = registerState.copy(username = it) },
-            onPasswordChange = { registerState = registerState.copy(password = it) },
-            onConfirmPasswordChange = { registerState = registerState.copy(confirmPassword = it) },
-            onPasswordVisibilityChange = {
-                registerState = registerState.copy(passwordVisible = !registerState.passwordVisible)
-            },
-            onConfirmPasswordVisibilityChange = {
-                registerState =
-                    registerState.copy(confirmPasswordVisible = !registerState.confirmPasswordVisible)
-            },
-            onCheckedChange = { registerState = registerState.copy(isAcceptedTerms = it) }
+            email = state.email ,
+            username = state.username,
+            password = state.password,
+            passwordVisible = state.passwordVisible,
+            confirmPassword = state.confirmPassword,
+            confirmPasswordVisible = state.confirmPasswordVisible,
+            isAcceptedTerms = state.isAcceptedTerms ,
+            onEmailChange = viewModel::onEmailChange,
+            onUserNameChange = viewModel::onUsernameChange ,
+            onPasswordChange = viewModel::onPasswordChange,
+            onConfirmPasswordChange = viewModel::onConfirmPasswordChange,
+            onPasswordVisibilityChange = viewModel::onTogglePassword ,
+            onConfirmPasswordVisibilityChange = viewModel::onToggleConfirmPassword ,
+            onCheckedChange = viewModel::onToggleTerms
         )
 
         RegisterSubmitSection(
-            isLoading = registerState.isLoading,
-            errorMessage = registerState.errorMessage,
+            isLoading = isLoading,
+            errorMessage = errorMessage,
             onSubmit = { },
             onModeChange = { },
             onLoginClick = onLoginClick,

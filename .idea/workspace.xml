@@ -22,12 +22,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="035abac0-8cd9-4ff9-849c-4012da8d1cff" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/login/LoginContent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/login/LoginContent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/login/LoginInputFields.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/login/LoginInputFields.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/login/LoginUiState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/login/LoginUiState.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/login/LoginViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/login/LoginViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/register/RegisterContent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/register/RegisterContent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/register/RegisterInputFields.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/register/RegisterInputFields.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/register/RegisterUiState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/register/RegisterUiState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/register/RegisterViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/register/RegisterViewModel.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

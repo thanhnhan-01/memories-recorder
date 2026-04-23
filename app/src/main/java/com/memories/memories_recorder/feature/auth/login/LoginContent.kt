@@ -19,8 +19,8 @@ fun LoginContent(
     onRegisterClick: () -> Unit
 ) {
     val state = viewModel.uiState
-    val isLoading = state.requestState is RequestState.Loading
-    val errorMessage = (state.requestState as? RequestState.Error)?.message
+    val isLoading = state.loginRequestState is LoginRequestState.Loading
+    val errorMessage = (state.loginRequestState as? LoginRequestState.Error)?.message
 
     Column(
         modifier = Modifier

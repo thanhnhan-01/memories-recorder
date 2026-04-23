@@ -31,7 +31,13 @@ import com.memories.memories_recorder.ui.theme.dimens
 
 @Composable
 fun RegisterInputFields(
-    registerState: RegisterUiState,
+    email: String,
+    username: String,
+    password: String,
+    passwordVisible: Boolean,
+    confirmPassword: String,
+    confirmPasswordVisible: Boolean,
+    isAcceptedTerms: Boolean,
     onEmailChange: (String) -> Unit,
     onUserNameChange: (String) -> Unit,
     onPasswordChange: (String) -> Unit,
@@ -46,7 +52,7 @@ fun RegisterInputFields(
     ) {
         // Email Field
         AppTextField(
-            value = registerState.email,
+            value = email,
             onValueChange = onEmailChange,
             placeholder = "Enter your email",
             keyboardType = KeyboardType.Email,
@@ -69,7 +75,7 @@ fun RegisterInputFields(
 
         // User Field
         AppTextField(
-            value = registerState.username,
+            value = username,
             onValueChange = onUserNameChange,
             placeholder = "Enter your username",
             keyboardType = KeyboardType.Text,
@@ -92,7 +98,7 @@ fun RegisterInputFields(
 
         // Password Field
         AppTextField(
-            value = registerState.password,
+            value = password,
             onValueChange = onPasswordChange,
             placeholder = "Enter your password",
             keyboardType = KeyboardType.Password,
@@ -104,7 +110,7 @@ fun RegisterInputFields(
                 )
             },
             trailingIcon = {
-                Crossfade(targetState = registerState.passwordVisible) { visible ->
+                Crossfade(targetState = passwordVisible) { visible ->
                     Box(
                         modifier = Modifier
                             .clickable { onPasswordVisibilityChange() }
@@ -122,7 +128,7 @@ fun RegisterInputFields(
                     }
                 }
             },
-            visualTransformation = if (registerState.passwordVisible)
+            visualTransformation = if (passwordVisible)
                 VisualTransformation.None
             else
                 PasswordVisualTransformation(),
@@ -138,7 +144,7 @@ fun RegisterInputFields(
 
         // Confirm Password
         AppTextField(
-            value = registerState.confirmPassword,
+            value = confirmPassword,
             onValueChange = onConfirmPasswordChange,
             placeholder = "Confirm your password",
             keyboardType = KeyboardType.Password,
@@ -150,7 +156,7 @@ fun RegisterInputFields(
                 )
             },
             trailingIcon = {
-                Crossfade(targetState = registerState.confirmPasswordVisible) { visible ->
+                Crossfade(targetState = confirmPasswordVisible) { visible ->
                     Box(
                         modifier = Modifier
                             .clickable { onConfirmPasswordVisibilityChange() }
@@ -168,7 +174,7 @@ fun RegisterInputFields(
                     }
                 }
             },
-            visualTransformation = if (registerState.confirmPasswordVisible)
+            visualTransformation = if (confirmPasswordVisible)
                 VisualTransformation.None
             else
                 PasswordVisualTransformation(),
@@ -185,12 +191,12 @@ fun RegisterInputFields(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .clickable { onCheckedChange(!registerState.isAcceptedTerms) },
+                .clickable { onCheckedChange(!isAcceptedTerms) },
             horizontalArrangement = Arrangement.spacedBy(6.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
             AppCheckBox(
-                checked = registerState.isAcceptedTerms,
+                checked = isAcceptedTerms,
                 onCheckedChange = onCheckedChange
             )
 

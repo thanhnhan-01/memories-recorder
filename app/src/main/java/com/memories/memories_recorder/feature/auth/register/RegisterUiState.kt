@@ -8,11 +8,16 @@ data class RegisterUiState(
     val email: String = "",
     val username: String = "",
     val password: String = "",
-    val confirmPassword: String = "",
-    val isLoading: Boolean = false,
-    val errorMessage: String? = null,
     val passwordVisible: Boolean = false,
+    val confirmPassword: String = "",
     val confirmPasswordVisible: Boolean = false,
     val isAcceptedTerms: Boolean = false,
-    val isSuccess: Boolean = false
+    val registerRequestState: RegisterRequestState = RegisterRequestState.Idle
 )
+
+sealed class RegisterRequestState {
+    object Idle : RegisterRequestState()
+    object Loading : RegisterRequestState()
+    object Success : RegisterRequestState()
+    data class Error(val message: String) : RegisterRequestState()
+}

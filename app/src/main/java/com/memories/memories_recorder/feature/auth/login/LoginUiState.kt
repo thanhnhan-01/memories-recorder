@@ -8,12 +8,12 @@ data class LoginUiState(
     val email: String = "",
     val password: String = "",
     val passwordVisible: Boolean = false,
-    val requestState: RequestState = RequestState.Idle
+    val loginRequestState: LoginRequestState = LoginRequestState.Idle
 )
 
-sealed class RequestState {
-    object Idle : RequestState()
-    object Loading : RequestState()
-    object Success : RequestState()
-    data class Error(val message: String) : RequestState()
+sealed class LoginRequestState {
+    object Idle : LoginRequestState()
+    object Loading : LoginRequestState()
+    object Success : LoginRequestState()
+    data class Error(val message: String) : LoginRequestState()
 }
