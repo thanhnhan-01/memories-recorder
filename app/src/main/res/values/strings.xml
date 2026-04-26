@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Memories Recorder</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="email_placeholder">Enter your email</string>
+    <string name="username_placeholder">Enter your username</string>
+    <string name="password_placeholder">Enter your password</string>
+    <string name="confirm_password_placeholder">Confirm your password</string>
+    <string name="not_account">Don\'t have an account? </string>
+    <string name="have_account">Already have an account? </string>
+    <string name="accept">I accept </string>
+    <string name="term_condition">Terms and Condition </string>
+    <string name="and">and </string>
+    <string name="privacy_policy">Privacy and Policy</string>
 </resources>

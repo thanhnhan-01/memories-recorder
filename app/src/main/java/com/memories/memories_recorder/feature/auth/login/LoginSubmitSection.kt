@@ -10,7 +10,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import com.memories.memories_recorder.R
 import com.memories.memories_recorder.ui.components.AppButton
 import com.memories.memories_recorder.ui.components.AppTextButton
 import com.memories.memories_recorder.ui.theme.dimens
@@ -20,7 +22,6 @@ fun LoginSubmitSection(
     isLoading: Boolean,
     errorMessage: String?,
     onRegisterClick: () -> Unit,
-    onModeChange: () -> Unit,
     onSubmit: () -> Unit,
 ) {
     Column(
@@ -36,9 +37,9 @@ fun LoginSubmitSection(
         }
 
         AppButton(
-            text = "Sign In",
+            text = stringResource(R.string.sign_in),
             onClick = onSubmit,
-            enabled = !isLoading,
+            isLoading = isLoading,
             fontWeight = FontWeight.Bold,
             backgroundColor = MaterialTheme.colorScheme.onBackground,
             contentColor = MaterialTheme.colorScheme.onPrimary,
@@ -53,14 +54,14 @@ fun LoginSubmitSection(
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Text(
-                text = "Don't have an account? ",
+                text =stringResource(R.string.not_account),
                 style = MaterialTheme.typography.bodyMedium.copy(
                     fontSize = MaterialTheme.dimens.textMd
                 )
             )
 
             AppTextButton(
-                text = "Sign Up",
+                text = stringResource(R.string.sign_up),
                 onClick = onRegisterClick,
                 style = MaterialTheme.typography.bodyMedium.copy(
                     fontSize = MaterialTheme.dimens.textMd  ,

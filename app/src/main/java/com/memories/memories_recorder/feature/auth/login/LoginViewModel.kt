@@ -4,6 +4,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class LoginViewModel : ViewModel() {
     var uiState by mutableStateOf(LoginUiState())
@@ -24,6 +27,12 @@ class LoginViewModel : ViewModel() {
     }
 
     fun onSubmit() {
-        // TODO: call API
+        viewModelScope.launch {
+            uiState = uiState.copy(loginRequestState = LoginRequestState.Loading)
+
+            delay(1500)
+
+            uiState = uiState.copy(loginRequestState = LoginRequestState.Success)
+        }
     }
 }

@@ -19,8 +19,6 @@ fun LoginContent(
     onRegisterClick: () -> Unit
 ) {
     val state = viewModel.uiState
-    val isLoading = state.loginRequestState is LoginRequestState.Loading
-    val errorMessage = (state.loginRequestState as? LoginRequestState.Error)?.message
 
     Column(
         modifier = Modifier
@@ -32,20 +30,17 @@ fun LoginContent(
         AuthHeader()
 
         LoginInputFields(
-            email = state.email,
-            password = state.password,
-            passwordVisible = state.passwordVisible,
+            state = state ,
             onEmailChange = viewModel::onEmailChange ,
             onPasswordChange = viewModel::onPasswordChange,
-            onPasswordVisibilityChange = viewModel::onTogglePassword,
+            onTogglePassword = viewModel::onTogglePassword,
             onForgotPasswordClick = onForgotPasswordClick,
         )
 
         LoginSubmitSection(
-            isLoading = isLoading ,
-            errorMessage = errorMessage  ,
+            isLoading = state.isLoading ,
+            errorMessage = state.errorMessage  ,
             onSubmit = viewModel::onSubmit,
-            onModeChange = { },
             onRegisterClick = onRegisterClick,
         )
     }

@@ -29,22 +29,18 @@ fun AppButton(
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
     isLoading: Boolean = false,
-
     // Style
     shape: Shape ?= null,
     height: Float = 48f,
     fontWeight: FontWeight ?= null,
     fontSize: Float = 0f,
-
     // Colors
     backgroundColor: Color = Color.Unspecified,
     contentColor: Color = Color.Unspecified,
-
     // Content
     leadingIcon: @Composable (() -> Unit)? = null,
     contentPadding: PaddingValues = ButtonDefaults.ContentPadding,
 ) {
-
     val finalFontSize = if (fontSize <= 0f) {
         MaterialTheme.dimens.textLg
     } else {

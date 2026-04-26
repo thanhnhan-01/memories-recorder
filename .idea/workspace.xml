@@ -22,14 +22,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="035abac0-8cd9-4ff9-849c-4012da8d1cff" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/ui/common/AuthPasswordField.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/ui/common/AuthTextField.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/login/LoginContent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/login/LoginContent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/login/LoginInputFields.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/login/LoginInputFields.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/login/LoginSubmitSection.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/login/LoginSubmitSection.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/login/LoginUiState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/login/LoginUiState.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/register/RegisterContent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/register/RegisterContent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/register/RegisterInputFields.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/register/RegisterInputFields.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/register/RegisterUiState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/register/RegisterUiState.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/register/RegisterViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/register/RegisterViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/login/LoginViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/login/LoginViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/ui/components/AppButton.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/ui/components/AppButton.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,12 +225,12 @@
       <map>
         <entry key="com.memories.memories_recorder">
           <value>
-            <CheckInfo lastCheckTimestamp="1776616967153" />
+            <CheckInfo lastCheckTimestamp="1777193244719" />
           </value>
         </entry>
         <entry key="com.memories.memories_recorder.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1776616967140" />
+            <CheckInfo lastCheckTimestamp="1777193244735" />
           </value>
         </entry>
       </map>
