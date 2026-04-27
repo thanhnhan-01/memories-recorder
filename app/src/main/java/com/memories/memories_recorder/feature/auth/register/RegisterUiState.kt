@@ -1,9 +1,12 @@
 package com.memories.memories_recorder.feature.auth.register
 
+import androidx.compose.runtime.Immutable
+
 /**
  * UiState for Register Screen
  */
 
+@Immutable
 data class RegisterUiState(
     val email: String = "",
     val username: String = "",
@@ -13,7 +16,13 @@ data class RegisterUiState(
     val confirmPasswordVisible: Boolean = false,
     val isAcceptedTerms: Boolean = false,
     val registerRequestState: RegisterRequestState = RegisterRequestState.Idle
-)
+){
+    val isLoading: Boolean
+        get() = registerRequestState is RegisterRequestState.Loading
+
+    val errorMessage: String?
+        get() = (registerRequestState as? RegisterRequestState.Error)?.message
+}
 
 sealed class RegisterRequestState {
     object Idle : RegisterRequestState()

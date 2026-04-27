@@ -5,8 +5,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class RegisterViewModel : ViewModel() {
     var uiState by mutableStateOf(RegisterUiState())
@@ -41,30 +41,13 @@ class RegisterViewModel : ViewModel() {
     }
 
     fun onSubmit() {
-//        val error = validate()
-//
-//        if (error != null) {
-//            uiState = uiState.copy(
-//                requestState = RequestState.Error(error)
-//            )
-//            return
-//        }
-//
-//        viewModelScope.launch {
-//            uiState = uiState.copy(requestState = RequestState.Loading)
-//
-//            try {
-//                delay(1500)
-//
-//                uiState = uiState.copy(
-//                    requestState = RequestState.Success
-//                )
-//            } catch (e: Exception) {
-//                uiState = uiState.copy(
-//                    requestState = RequestState.Error("Register failed")
-//                )
-//            }
-//        }
+        viewModelScope.launch {
+            uiState = uiState.copy(registerRequestState = RegisterRequestState.Loading)
+
+            delay(1500)
+
+            uiState = uiState.copy(registerRequestState = RegisterRequestState.Success)
+        }
     }
 
 //    private fun validate(): String? {

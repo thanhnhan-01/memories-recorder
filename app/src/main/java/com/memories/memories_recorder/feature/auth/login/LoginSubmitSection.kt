@@ -54,7 +54,7 @@ fun LoginSubmitSection(
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Text(
-                text =stringResource(R.string.not_account),
+                text = stringResource(R.string.not_account),
                 style = MaterialTheme.typography.bodyMedium.copy(
                     fontSize = MaterialTheme.dimens.textMd
                 )

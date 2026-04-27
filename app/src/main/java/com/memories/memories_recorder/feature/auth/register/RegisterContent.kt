@@ -18,8 +18,6 @@ fun RegisterContent(
     onLoginClick: () -> Unit,
 ) {
     val state = viewModel.uiState
-    val isLoading = state.registerRequestState is RegisterRequestState.Loading
-    val errorMessage = (state.registerRequestState as? RegisterRequestState.Error)?.message
 
     Column(
         modifier = Modifier
@@ -31,27 +29,21 @@ fun RegisterContent(
         AuthHeader()
 
         RegisterInputFields(
-            email = state.email ,
-            username = state.username,
-            password = state.password,
-            passwordVisible = state.passwordVisible,
-            confirmPassword = state.confirmPassword,
-            confirmPasswordVisible = state.confirmPasswordVisible,
-            isAcceptedTerms = state.isAcceptedTerms ,
+            state = state,
+            isAcceptedTerms = state.isAcceptedTerms,
             onEmailChange = viewModel::onEmailChange,
-            onUserNameChange = viewModel::onUsernameChange ,
+            onUserNameChange = viewModel::onUsernameChange,
             onPasswordChange = viewModel::onPasswordChange,
             onConfirmPasswordChange = viewModel::onConfirmPasswordChange,
-            onPasswordVisibilityChange = viewModel::onTogglePassword ,
-            onConfirmPasswordVisibilityChange = viewModel::onToggleConfirmPassword ,
+            onTogglePassword = viewModel::onTogglePassword,
+            onToggleConfirmPassword = viewModel::onToggleConfirmPassword,
             onCheckedChange = viewModel::onToggleTerms
         )
 
         RegisterSubmitSection(
-            isLoading = isLoading,
-            errorMessage = errorMessage,
-            onSubmit = { },
-            onModeChange = { },
+            isLoading = state.isLoading,
+            errorMessage = state.errorMessage,
+            onSubmit = viewModel::onSubmit,
             onLoginClick = onLoginClick,
         )
     }
