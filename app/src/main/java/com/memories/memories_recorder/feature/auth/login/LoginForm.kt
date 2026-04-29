@@ -15,12 +15,9 @@ import com.memories.memories_recorder.ui.components.AppTextButton
 import com.memories.memories_recorder.ui.theme.dimens
 
 @Composable
-fun LoginInputFields(
+fun LoginForm(
     state: LoginUiState,
-    onEmailChange: (String) -> Unit,
-    onPasswordChange: (String) -> Unit,
-    onTogglePassword: () -> Unit,
-    onForgotPasswordClick: () -> Unit
+    onAction: (LoginAction) -> Unit,
 ) {
     Column(
         verticalArrangement = Arrangement.spacedBy(MaterialTheme.dimens.spaceMd),
@@ -29,7 +26,7 @@ fun LoginInputFields(
         // Email Field
         AuthTextField(
             value = state.email,
-            onValueChange = onEmailChange,
+            onValueChange = { onAction(LoginAction.OnEmailChange(it)) },
             placeholder = stringResource(R.string.email_placeholder),
             icon = R.drawable.ic_email,
             keyboardType = KeyboardType.Email
@@ -38,16 +35,16 @@ fun LoginInputFields(
         // Password Field
         AuthPasswordField(
             value = state.password,
-            onValueChange = onPasswordChange,
+            onValueChange = { onAction(LoginAction.OnPasswordChange(it)) },
             placeholder = stringResource(R.string.password_placeholder),
             icon = R.drawable.ic_password,
             passwordVisible = state.passwordVisible,
-            onToggleVisibility = onTogglePassword
+            onToggleVisibility = { onAction(LoginAction.OnTogglePassword) }
         )
 
         AppTextButton(
             text = stringResource(R.string.forgot_password),
-            onClick = onForgotPasswordClick ,
+            onClick = { onAction(LoginAction.OnForgotPasswordClick) },
             style = MaterialTheme.typography.bodyMedium.copy(fontSize = MaterialTheme.dimens.textMd),
         )
     }

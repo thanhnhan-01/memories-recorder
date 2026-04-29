@@ -6,33 +6,57 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
 
 class LoginViewModel : ViewModel() {
     var uiState by mutableStateOf(LoginUiState())
         private set
 
-    fun onEmailChange(email: String) {
-        uiState = uiState.copy(email = email)
+    private val _event = MutableSharedFlow<LoginEvent>()
+    val event = _event.asSharedFlow()
+
+    fun onAction(action: LoginAction) {
+        when (action) {
+            is LoginAction.OnEmailChange -> {
+                uiState = uiState.copy(email = action.value)
+            }
+
+            is LoginAction.OnPasswordChange -> {
+                uiState = uiState.copy(password = action.value)
+            }
+
+            LoginAction.OnTogglePassword -> {
+                uiState = uiState.copy(
+                    passwordVisible = !uiState.passwordVisible
+                )
+            }
+
+            LoginAction.OnSubmit -> onSubmit()
+
+            LoginAction.OnRegisterClick -> {
+                emit(LoginEvent.NavigateToRegister)
+            }
+
+            LoginAction.OnForgotPasswordClick -> {
+                emit(LoginEvent.NavigateToForgotPassword)
+            }
+        }
     }
 
-    fun onPasswordChange(password: String) {
-        uiState = uiState.copy(password = password)
-    }
-
-    fun onTogglePassword() {
-        uiState = uiState.copy(
-            passwordVisible = !uiState.passwordVisible
-        )
-    }
-
-    fun onSubmit() {
+    private fun onSubmit() {
         viewModelScope.launch {
             uiState = uiState.copy(loginRequestState = LoginRequestState.Loading)
-
             delay(1500)
-
             uiState = uiState.copy(loginRequestState = LoginRequestState.Success)
+            emit(LoginEvent.NavigateToHome)
+        }
+    }
+
+    private fun emit(event: LoginEvent) {
+        viewModelScope.launch {
+            _event.emit(event)
         }
     }
 }

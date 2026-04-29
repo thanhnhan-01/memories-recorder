@@ -12,17 +12,17 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
 import com.memories.memories_recorder.R
 import com.memories.memories_recorder.ui.components.AppButton
 import com.memories.memories_recorder.ui.components.AppTextButton
 import com.memories.memories_recorder.ui.theme.dimens
 
 @Composable
-fun LoginSubmitSection(
+fun LoginFooter(
     isLoading: Boolean,
     errorMessage: String?,
-    onRegisterClick: () -> Unit,
-    onSubmit: () -> Unit,
+    onAction: (LoginAction) -> Unit,
 ) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -38,7 +38,7 @@ fun LoginSubmitSection(
 
         AppButton(
             text = stringResource(R.string.sign_in),
-            onClick = onSubmit,
+            onClick = { onAction(LoginAction.OnSubmit) },
             isLoading = isLoading,
             fontWeight = FontWeight.Bold,
             backgroundColor = MaterialTheme.colorScheme.onBackground,
@@ -50,7 +50,7 @@ fun LoginSubmitSection(
         // Switch mode link (Login <-> Register)
         Row(
             modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.Center,
+            horizontalArrangement = Arrangement.spacedBy(4.dp, Alignment.CenterHorizontally),
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Text(
@@ -62,9 +62,9 @@ fun LoginSubmitSection(
 
             AppTextButton(
                 text = stringResource(R.string.sign_up),
-                onClick = onRegisterClick,
+                onClick = { onAction(LoginAction.OnRegisterClick) },
                 style = MaterialTheme.typography.bodyMedium.copy(
-                    fontSize = MaterialTheme.dimens.textMd  ,
+                    fontSize = MaterialTheme.dimens.textMd,
                     fontWeight = FontWeight.Bold
                 ),
             )

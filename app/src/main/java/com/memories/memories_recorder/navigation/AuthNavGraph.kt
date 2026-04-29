@@ -12,12 +12,15 @@ fun NavGraphBuilder.authGraph(
 ) {
     composable(Routes.LOGIN) {
         LoginScreen(
-            onRegisterClick = {
+            onNavigateToRegister = {
                 navController.navigate(Routes.REGISTER)
             },
-          onForgotPasswordClick = {
-              navController.navigate(Routes.FORGOT_PASSWORD)
-          }
+            onNavigateToForgot = {
+                navController.navigate(Routes.FORGOT_PASSWORD)
+            },
+            onNavigateToHome = {
+                navController.navigate(Routes.HOME)
+            }
         )
     }
 

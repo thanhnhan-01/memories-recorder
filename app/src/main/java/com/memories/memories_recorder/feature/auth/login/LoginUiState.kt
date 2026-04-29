@@ -27,3 +27,18 @@ sealed class LoginRequestState {
     object Success : LoginRequestState()
     data class Error(val message: String) : LoginRequestState()
 }
+
+sealed class LoginAction {
+    data class OnEmailChange(val value: String) : LoginAction()
+    data class OnPasswordChange(val value: String) : LoginAction()
+    object OnTogglePassword : LoginAction()
+    object OnSubmit : LoginAction()
+    object OnRegisterClick : LoginAction()
+    object OnForgotPasswordClick : LoginAction()
+}
+
+sealed class LoginEvent {
+    object NavigateToHome : LoginEvent()
+    object NavigateToRegister : LoginEvent()
+    object NavigateToForgotPassword : LoginEvent()
+}

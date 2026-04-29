@@ -13,10 +13,8 @@ import com.memories.memories_recorder.feature.auth.ui.common.AuthHeader
 import com.memories.memories_recorder.ui.theme.dimens
 
 @Composable
-fun LoginContent(
+fun LoginBody(
     viewModel: LoginViewModel = androidx.lifecycle.viewmodel.compose.viewModel(),
-    onForgotPasswordClick: () -> Unit,
-    onRegisterClick: () -> Unit
 ) {
     val state = viewModel.uiState
 
@@ -29,19 +27,15 @@ fun LoginContent(
     ) {
         AuthHeader()
 
-        LoginInputFields(
-            state = state ,
-            onEmailChange = viewModel::onEmailChange ,
-            onPasswordChange = viewModel::onPasswordChange,
-            onTogglePassword = viewModel::onTogglePassword,
-            onForgotPasswordClick = onForgotPasswordClick,
+        LoginForm(
+            state = state,
+            onAction = viewModel::onAction
         )
 
-        LoginSubmitSection(
-            isLoading = state.isLoading ,
-            errorMessage = state.errorMessage  ,
-            onSubmit = viewModel::onSubmit,
-            onRegisterClick = onRegisterClick,
+        LoginFooter(
+            isLoading = state.isLoading,
+            errorMessage = state.errorMessage,
+            onAction = viewModel::onAction
         )
     }
 }

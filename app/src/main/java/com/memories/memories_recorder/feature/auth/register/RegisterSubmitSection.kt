@@ -12,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
 import com.memories.memories_recorder.R
 import com.memories.memories_recorder.ui.components.AppButton
 import com.memories.memories_recorder.ui.components.AppTextButton
@@ -50,7 +51,7 @@ fun RegisterSubmitSection(
         // Switch mode link (Register <-> Login)
         Row(
             modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.Center,
+            horizontalArrangement = Arrangement.spacedBy(4.dp, Alignment.CenterHorizontally),
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Text(
