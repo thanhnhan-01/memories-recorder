@@ -29,12 +29,12 @@ sealed class LoginRequestState {
 }
 
 sealed class LoginAction {
-    data class OnEmailChange(val value: String) : LoginAction()
-    data class OnPasswordChange(val value: String) : LoginAction()
-    object OnTogglePassword : LoginAction()
-    object OnSubmit : LoginAction()
-    object OnRegisterClick : LoginAction()
-    object OnForgotPasswordClick : LoginAction()
+    data class EmailChange(val value: String) : LoginAction()
+    data class PasswordChange(val value: String) : LoginAction()
+    object TogglePassword : LoginAction()
+    object SubmitClicked : LoginAction()
+    object RegisterClicked : LoginAction()
+    object ForgotPasswordClick : LoginAction()
 }
 
 sealed class LoginEvent {

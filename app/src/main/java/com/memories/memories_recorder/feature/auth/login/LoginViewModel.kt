@@ -19,27 +19,27 @@ class LoginViewModel : ViewModel() {
 
     fun onAction(action: LoginAction) {
         when (action) {
-            is LoginAction.OnEmailChange -> {
+            is LoginAction.EmailChange -> {
                 uiState = uiState.copy(email = action.value)
             }
 
-            is LoginAction.OnPasswordChange -> {
+            is LoginAction.PasswordChange -> {
                 uiState = uiState.copy(password = action.value)
             }
 
-            LoginAction.OnTogglePassword -> {
+            LoginAction.TogglePassword -> {
                 uiState = uiState.copy(
                     passwordVisible = !uiState.passwordVisible
                 )
             }
 
-            LoginAction.OnSubmit -> onSubmit()
+            LoginAction.SubmitClicked -> onSubmit()
 
-            LoginAction.OnRegisterClick -> {
+            LoginAction.RegisterClicked -> {
                 emit(LoginEvent.NavigateToRegister)
             }
 
-            LoginAction.OnForgotPasswordClick -> {
+            LoginAction.ForgotPasswordClick -> {
                 emit(LoginEvent.NavigateToForgotPassword)
             }
         }

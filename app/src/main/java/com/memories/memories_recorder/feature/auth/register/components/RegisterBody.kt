@@ -1,4 +1,4 @@
-package com.memories.memories_recorder.feature.auth.register
+package com.memories.memories_recorder.feature.auth.register.components
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -9,13 +9,14 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.memories.memories_recorder.feature.auth.register.RegisterViewModel
 import com.memories.memories_recorder.feature.auth.ui.common.AuthHeader
 import com.memories.memories_recorder.ui.theme.dimens
 
 @Composable
-fun RegisterContent(
-    viewModel: RegisterViewModel = androidx.lifecycle.viewmodel.compose.viewModel(),
-    onLoginClick: () -> Unit,
+fun RegisterBody(
+    viewModel: RegisterViewModel = viewModel(),
 ) {
     val state = viewModel.uiState
 
@@ -28,23 +29,15 @@ fun RegisterContent(
     ) {
         AuthHeader()
 
-        RegisterInputFields(
+        RegisterForm(
             state = state,
-            isAcceptedTerms = state.isAcceptedTerms,
-            onEmailChange = viewModel::onEmailChange,
-            onUserNameChange = viewModel::onUsernameChange,
-            onPasswordChange = viewModel::onPasswordChange,
-            onConfirmPasswordChange = viewModel::onConfirmPasswordChange,
-            onTogglePassword = viewModel::onTogglePassword,
-            onToggleConfirmPassword = viewModel::onToggleConfirmPassword,
-            onCheckedChange = viewModel::onToggleTerms
+            onAction = viewModel::onAction
         )
 
-        RegisterSubmitSection(
+        RegisterFooter(
             isLoading = state.isLoading,
             errorMessage = state.errorMessage,
-            onSubmit = viewModel::onSubmit,
-            onLoginClick = onLoginClick,
+            onAction = viewModel::onAction
         )
     }
 }

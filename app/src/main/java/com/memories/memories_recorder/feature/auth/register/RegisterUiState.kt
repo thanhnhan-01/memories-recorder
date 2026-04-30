@@ -30,3 +30,20 @@ sealed class RegisterRequestState {
     object Success : RegisterRequestState()
     data class Error(val message: String) : RegisterRequestState()
 }
+
+sealed class RegisterAction {
+    data class EmailChanged(val value: String) : RegisterAction()
+    data class UsernameChanged(val value: String) : RegisterAction()
+    data class PasswordChanged(val value: String) : RegisterAction()
+    data class ConfirmPasswordChanged(val value: String) : RegisterAction()
+    object TogglePassword : RegisterAction()
+    object ToggleConfirmPassword : RegisterAction()
+    data class TermsCheckedChanged(val checked: Boolean) : RegisterAction()
+    object SubmitClicked : RegisterAction()
+    object LoginClicked : RegisterAction()
+}
+
+sealed class RegisterEvent {
+    object NavigateToLogin : RegisterEvent()
+    object NavigateToHome : RegisterEvent()
+}

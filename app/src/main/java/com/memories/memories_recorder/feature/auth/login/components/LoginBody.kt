@@ -1,4 +1,4 @@
-package com.memories.memories_recorder.feature.auth.login
+package com.memories.memories_recorder.feature.auth.login.components
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -9,12 +9,15 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.memories.memories_recorder.feature.auth.login.LoginViewModel
 import com.memories.memories_recorder.feature.auth.ui.common.AuthHeader
 import com.memories.memories_recorder.ui.theme.dimens
 
+
 @Composable
 fun LoginBody(
-    viewModel: LoginViewModel = androidx.lifecycle.viewmodel.compose.viewModel(),
+    viewModel: LoginViewModel = viewModel(),
 ) {
     val state = viewModel.uiState
 

@@ -1,4 +1,4 @@
-package com.memories.memories_recorder.feature.auth.register
+package com.memories.memories_recorder.feature.auth.login.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -14,16 +14,16 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.memories.memories_recorder.R
+import com.memories.memories_recorder.feature.auth.login.LoginAction
 import com.memories.memories_recorder.ui.components.AppButton
 import com.memories.memories_recorder.ui.components.AppTextButton
 import com.memories.memories_recorder.ui.theme.dimens
 
 @Composable
-fun RegisterSubmitSection(
+fun LoginFooter(
     isLoading: Boolean,
     errorMessage: String?,
-    onLoginClick: () -> Unit,
-    onSubmit: () -> Unit,
+    onAction: (LoginAction) -> Unit,
 ) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -38,34 +38,34 @@ fun RegisterSubmitSection(
         }
 
         AppButton(
-            text = stringResource(R.string.sign_up),
-            onClick = onSubmit,
+            text = stringResource(R.string.sign_in),
+            onClick = { onAction(LoginAction.SubmitClicked) },
             isLoading = isLoading,
-            fontWeight = FontWeight.Bold ,
+            fontWeight = FontWeight.Bold,
             backgroundColor = MaterialTheme.colorScheme.onBackground,
             contentColor = MaterialTheme.colorScheme.onPrimary,
             shape = RoundedCornerShape(MaterialTheme.dimens.radiusSm),
             modifier = Modifier.fillMaxWidth()
         )
 
-        // Switch mode link (Register <-> Login)
+        // Switch mode link (Login <-> Register)
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.spacedBy(4.dp, Alignment.CenterHorizontally),
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Text(
-                text = stringResource(R.string.have_account),
+                text = stringResource(R.string.not_account),
                 style = MaterialTheme.typography.bodyMedium.copy(
                     fontSize = MaterialTheme.dimens.textMd
                 )
             )
 
             AppTextButton(
-                text = stringResource(R.string.sign_in),
-                onClick = onLoginClick,
+                text = stringResource(R.string.sign_up),
+                onClick = { onAction(LoginAction.RegisterClicked) },
                 style = MaterialTheme.typography.bodyMedium.copy(
-                    fontSize = MaterialTheme.dimens.textMd  ,
+                    fontSize = MaterialTheme.dimens.textMd,
                     fontWeight = FontWeight.Bold
                 ),
             )

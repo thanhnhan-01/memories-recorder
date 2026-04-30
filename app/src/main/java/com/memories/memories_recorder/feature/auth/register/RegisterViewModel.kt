@@ -6,61 +6,72 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
 
 class RegisterViewModel : ViewModel() {
     var uiState by mutableStateOf(RegisterUiState())
         private set
 
-    fun onEmailChange(email: String) {
-        uiState = uiState.copy(email = email)
-    }
+    private val _event = MutableSharedFlow<RegisterEvent>()
+    val event = _event.asSharedFlow()
 
-    fun onUsernameChange(username: String) {
-        uiState = uiState.copy(username = username)
-    }
+    fun onAction(action: RegisterAction) {
+        when (action) {
 
-    fun onPasswordChange(password: String) {
-        uiState = uiState.copy(password = password)
-    }
+            is RegisterAction.EmailChanged -> {
+                uiState = uiState.copy(email = action.value)
+            }
 
-    fun onTogglePassword() {
-        uiState = uiState.copy(passwordVisible = !uiState.passwordVisible)
-    }
+            is RegisterAction.UsernameChanged -> {
+                uiState = uiState.copy(username = action.value)
+            }
 
-    fun onConfirmPasswordChange(confirmPassword: String) {
-        uiState = uiState.copy(confirmPassword = confirmPassword )
-    }
+            is RegisterAction.PasswordChanged -> {
+                uiState = uiState.copy(password = action.value)
+            }
 
-    fun onToggleConfirmPassword() {
-        uiState = uiState.copy(confirmPasswordVisible = !uiState.confirmPasswordVisible)
-    }
+            is RegisterAction.ConfirmPasswordChanged -> {
+                uiState = uiState.copy(confirmPassword = action.value)
+            }
 
-    fun onToggleTerms(checked : Boolean) {
-        uiState = uiState.copy(isAcceptedTerms = checked)
-    }
+            RegisterAction.TogglePassword -> {
+                uiState = uiState.copy(
+                    passwordVisible = !uiState.passwordVisible
+                )
+            }
 
-    fun onSubmit() {
-        viewModelScope.launch {
-            uiState = uiState.copy(registerRequestState = RegisterRequestState.Loading)
+            RegisterAction.ToggleConfirmPassword -> {
+                uiState = uiState.copy(
+                    confirmPasswordVisible = !uiState.confirmPasswordVisible
+                )
+            }
 
-            delay(1500)
+            is RegisterAction.TermsCheckedChanged -> {
+                uiState = uiState.copy(isAcceptedTerms = action.checked)
+            }
 
-            uiState = uiState.copy(registerRequestState = RegisterRequestState.Success)
+            RegisterAction.SubmitClicked -> onSubmit()
+
+            RegisterAction.LoginClicked -> {
+                emit(RegisterEvent.NavigateToLogin)
+            }
         }
     }
 
-//    private fun validate(): String? {
-//        if (uiState.email.isBlank()) return "Email is required"
-//        if (uiState.username.isBlank()) return "Username is required"
-//        if (uiState.password.isBlank()) return "Password is required"
-//        if (uiState.confirmPassword.isBlank()) return "Confirm password is required"
-//        if (uiState.password != uiState.confirmPassword) return "Passwords do not match"
-//        if (!uiState.isAcceptedTerms) return "You must accept terms"
-//        return null
-//    }
+    private fun onSubmit() {
+        viewModelScope.launch {
+            uiState = uiState.copy(registerRequestState = RegisterRequestState.Loading)
+            delay(1500)
+            uiState = uiState.copy(registerRequestState = RegisterRequestState.Success)
+            emit(RegisterEvent.NavigateToHome)
+        }
+    }
 
-    fun resetForm() {
-//        uiState = RegisterUiState()
+    private fun emit(event: RegisterEvent) {
+        viewModelScope.launch {
+            _event.emit(event)
+        }
     }
 }

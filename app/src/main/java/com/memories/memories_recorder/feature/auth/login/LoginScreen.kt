@@ -2,6 +2,8 @@ package com.memories.memories_recorder.feature.auth.login
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.memories.memories_recorder.feature.auth.login.components.LoginBody
 import com.memories.memories_recorder.ui.utils.AppWrapContent
 
 @Composable
@@ -10,7 +12,7 @@ fun LoginScreen(
     onNavigateToForgot: () -> Unit,
     onNavigateToHome: () -> Unit
 ) {
-    val viewModel: LoginViewModel = androidx.lifecycle.viewmodel.compose.viewModel()
+    val viewModel: LoginViewModel = viewModel()
 
     LaunchedEffect(Unit) {
         viewModel.event.collect { event ->

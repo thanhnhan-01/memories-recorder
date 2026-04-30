@@ -26,9 +26,13 @@ fun NavGraphBuilder.authGraph(
 
     composable(Routes.REGISTER) {
         RegisterScreen(
-            onBackClick = {
-                navController.popBackStack()
-            }
+            onNavigateToLogin = {
+                navController.navigate(Routes.LOGIN)
+            },
+
+            onNavigateToHome = {
+                navController.navigate(Routes.HOME)
+            },
         )
     }
 
