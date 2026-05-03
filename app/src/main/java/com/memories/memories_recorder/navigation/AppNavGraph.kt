@@ -4,9 +4,6 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.memories.memories_recorder.feature.auth.forgot_password.ForgotPasswordScreen
-import com.memories.memories_recorder.feature.auth.login.LoginScreen
-import com.memories.memories_recorder.feature.auth.register.RegisterScreen
 import com.memories.memories_recorder.feature.home.HomeScreen
 
 @Composable
@@ -15,7 +12,7 @@ fun AppNavGraph(
 ) {
     NavHost(
         navController = navController,
-        startDestination = Routes.LOGIN
+        startDestination = Routes.LOGIN,
     ) {
 
         authGraph(navController)
