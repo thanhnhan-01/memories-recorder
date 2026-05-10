@@ -13,7 +13,7 @@ import com.memories.memories_recorder.feature.auth.login.LoginAction
 import com.memories.memories_recorder.feature.auth.login.LoginUiState
 import com.memories.memories_recorder.feature.auth.ui.common.AuthPasswordField
 import com.memories.memories_recorder.feature.auth.ui.common.AuthTextField
-import com.memories.memories_recorder.ui.components.AppTextButton
+import com.memories.memories_recorder.ui.components.common.AppTextButton
 import com.memories.memories_recorder.ui.theme.dimens
 
 @Composable

@@ -7,4 +7,5 @@ object Routes {
     const val HOME = "home"
     const val MEMORY = "memory"
     const val PROFILE = "profile"
+    const val MEMORY_EDITOR = "memory_editor"
 }

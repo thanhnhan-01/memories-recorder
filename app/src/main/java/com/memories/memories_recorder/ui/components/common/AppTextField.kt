@@ -1,4 +1,4 @@
-package com.memories.memories_recorder.ui.components
+package com.memories.memories_recorder.ui.components.common
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.FastOutSlowInEasing

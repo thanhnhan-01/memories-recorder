@@ -12,6 +12,8 @@ val Surface = Color(0xFFF5F5F5)
 // Input
 val SurfaceVariant = Color(0xFFEDEDED)
 
+val BottomBarBackground = Color(0xFFEAEAEA)
+
 // Text
 val OnPrimary = Color(0xFFFFFFFF)
 val OnBackground = Color(0xFF000000)

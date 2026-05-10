@@ -7,6 +7,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 data class Dimens(
+    val textXs: TextUnit,
     val textSm: TextUnit,
     val textMd: TextUnit,
     val textLg: TextUnit,
@@ -38,6 +39,7 @@ data class Dimens(
 
 val LocalDimens = compositionLocalOf {
     Dimens(
+        textXs = 12.sp,
         textSm = 14.sp,
         textMd = 16.sp,
         textLg = 18.sp,

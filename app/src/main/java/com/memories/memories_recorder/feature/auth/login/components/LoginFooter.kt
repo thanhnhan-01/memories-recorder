@@ -15,8 +15,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.memories.memories_recorder.R
 import com.memories.memories_recorder.feature.auth.login.LoginAction
-import com.memories.memories_recorder.ui.components.AppButton
-import com.memories.memories_recorder.ui.components.AppTextButton
+import com.memories.memories_recorder.ui.components.common.AppButton
+import com.memories.memories_recorder.ui.components.common.AppTextButton
 import com.memories.memories_recorder.ui.theme.dimens
 
 @Composable

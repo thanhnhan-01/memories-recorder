@@ -1,4 +1,4 @@
-package com.memories.memories_recorder.ui.components
+package com.memories.memories_recorder.ui.components.common
 
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Checkbox

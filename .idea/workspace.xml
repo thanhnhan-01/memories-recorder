@@ -32,19 +32,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="035abac0-8cd9-4ff9-849c-4012da8d1cff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/home/HomeUiState.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/home/components/HomeBody.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/home/components/HomeEmpty.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/home/components/HomeHeader.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/home/components/TaskList.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/task/TaskScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/task/TaskUiState.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/task/TaskViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/navigation/MainNavGraph.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/ui/components/AppBottomBar.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.13/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.13/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.13/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/checksums/sha1-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/memory/detail/MemoryDetailScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/memory/editor/MemoryEditorScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/memory/list/MemoryListScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/memory/navigation/MemoryNavGraph.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/profile/ProfileScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/navigation/BottomBarItem.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/ui/components/navigation/AppBottomBar.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/ui/components/navigation/BottomBarItemView.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/ui/components/navigation/FloatingAddButton.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" afterDir="false" />
@@ -54,8 +50,30 @@
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/navigation/NavGraph.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/navigation/AppNavGraph.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/login/components/LoginBody.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/login/components/LoginBody.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/login/components/LoginFooter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/login/components/LoginFooter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/login/components/LoginForm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/login/components/LoginForm.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/register/components/RegisterBody.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/register/components/RegisterBody.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/register/components/RegisterFooter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/register/components/RegisterFooter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/register/components/TermsAndPolicySection.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/register/components/TermsAndPolicySection.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/ui/common/AuthPasswordField.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/ui/common/AuthPasswordField.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/ui/common/AuthTextField.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/auth/ui/common/AuthTextField.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/home/HomeScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/home/HomeScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/task/TaskScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/task/TaskUiState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/feature/task/TaskViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/navigation/AppNavGraph.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/navigation/AppNavGraph.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/navigation/MainNavGraph.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/navigation/MainNavGraph.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/navigation/Routes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/navigation/Routes.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/ui/components/AppBottomBar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/ui/components/common/AppBottomBar.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/ui/components/AppButton.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/ui/components/common/AppButton.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/ui/components/AppCheckBox.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/ui/components/common/AppCheckBox.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/ui/components/AppTextButton.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/ui/components/common/AppTextButton.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/ui/components/AppTextField.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/ui/components/common/AppTextField.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/ui/theme/Color.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/ui/theme/Color.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/ui/theme/Dimens.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/ui/theme/Dimens.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/ui/theme/Theme.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/memories/memories_recorder/ui/theme/Theme.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,6 +167,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
+      <recent name="com.memories.memories_recorder.ui.components.common" />
       <recent name="com.memories.memories_recorder.feature.auth.login.components" />
       <recent name="com.memories.memories_recorder.feature.auth.register.components" />
     </key>
@@ -252,12 +271,12 @@
       <map>
         <entry key="com.memories.memories_recorder">
           <value>
-            <CheckInfo lastCheckTimestamp="1777485244724" />
+            <CheckInfo lastCheckTimestamp="1778001514200" />
           </value>
         </entry>
         <entry key="com.memories.memories_recorder.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1777485244720" />
+            <CheckInfo lastCheckTimestamp="1778001514201" />
           </value>
         </entry>
       </map>

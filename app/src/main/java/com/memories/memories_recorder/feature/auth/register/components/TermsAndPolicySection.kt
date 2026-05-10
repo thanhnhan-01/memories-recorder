@@ -14,8 +14,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.memories.memories_recorder.R
-import com.memories.memories_recorder.ui.components.AppCheckBox
-import com.memories.memories_recorder.ui.components.AppTextButton
+import com.memories.memories_recorder.ui.components.common.AppCheckBox
+import com.memories.memories_recorder.ui.components.common.AppTextButton
 
 @Composable
 fun TermsAndPolicySection(

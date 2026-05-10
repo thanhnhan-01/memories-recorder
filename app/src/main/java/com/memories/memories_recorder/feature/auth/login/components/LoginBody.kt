@@ -1,8 +1,9 @@
 package com.memories.memories_recorder.feature.auth.login.components
 
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
@@ -21,24 +22,27 @@ fun LoginBody(
 ) {
     val state = viewModel.uiState
 
-    Column(
+    LazyColumn(
         modifier = Modifier
             .fillMaxSize()
-            .padding(MaterialTheme.dimens.spaceXl)
-            .verticalScroll(rememberScrollState()),
+            .imePadding()
+            .padding(MaterialTheme.dimens.spaceXl),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        AuthHeader()
+        item { AuthHeader() }
 
-        LoginForm(
-            state = state,
-            onAction = viewModel::onAction
-        )
-
-        LoginFooter(
-            isLoading = state.isLoading,
-            errorMessage = state.errorMessage,
-            onAction = viewModel::onAction
-        )
+        item {
+            LoginForm(
+                state = state,
+                onAction = viewModel::onAction
+            )
+        }
+        item {
+            LoginFooter(
+                isLoading = state.isLoading,
+                errorMessage = state.errorMessage,
+                onAction = viewModel::onAction
+            )
+        }
     }
 }
