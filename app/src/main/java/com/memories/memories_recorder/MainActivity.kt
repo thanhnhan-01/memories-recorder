@@ -7,8 +7,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.compose.rememberNavController
-import com.memories.memories_recorder.navigation.AppNavGraph
-import com.memories.memories_recorder.ui.theme.MemoriesRecorderTheme
+import com.memories.memories_recorder.core.navigation.AppNavGraph
+import com.memories.memories_recorder.core.designsystem.theme.MemoriesRecorderTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
