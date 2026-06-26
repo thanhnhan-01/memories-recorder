@@ -13,12 +13,6 @@ sealed class BottomDestination(
         label = R.string.label_home
     )
 
-    object Add : BottomDestination(
-        route = "add",
-        icon = R.drawable.ic_add,
-        label = R.string.label_add
-    )
-
     object Profile : BottomDestination(
         route = "profile",
         icon = R.drawable.ic_profile,
