@@ -125,11 +125,16 @@ fun BaseTextField(
                 .clip(shape)
                 .background(backgroundColor)
                 .border(
-                    width = if (isFocused) 1.5.dp else 1.dp,
-                    color = if (isFocused)
-                        MaterialTheme.colorScheme.primary.copy(alpha = 0.5f)
-                    else
-                        MaterialTheme.colorScheme.onSurface.copy(alpha = 0.06f),
+                    width = when {
+                        isError -> 1.5.dp
+                        isFocused -> 1.5.dp
+                        else -> 1.dp
+                    },
+                    color = when {
+                        isError -> MaterialTheme.colorScheme.error
+                        isFocused -> MaterialTheme.colorScheme.primary.copy(alpha = 0.5f)
+                        else -> MaterialTheme.colorScheme.onSurface.copy(alpha = 0.06f)
+                    },
                     shape = shape
                 ),
             decorationBox = { innerTextField ->
@@ -161,9 +166,16 @@ fun BaseTextField(
         supportingText?.let {
             Text(
                 text = it,
-                color = if (isError) Color.Red else MaterialTheme.colorScheme.onSurfaceVariant,
+                color = if (isError) {
+                    MaterialTheme.colorScheme.error
+                } else {
+                    MaterialTheme.colorScheme.onSurfaceVariant
+                },
                 style = MaterialTheme.typography.bodySmall,
-                modifier = Modifier.padding(top = 4.dp, start = 4.dp)
+                modifier = Modifier.padding(
+                    top = 4.dp,
+                    start = 4.dp
+                )
             )
         }
     }

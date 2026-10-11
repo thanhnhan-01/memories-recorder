@@ -31,7 +31,8 @@ fun LoginForm(
             onValueChange = { onAction(LoginAction.EmailChange(it)) },
             placeholder = stringResource(R.string.email_placeholder),
             icon = R.drawable.ic_email,
-            keyboardType = KeyboardType.Email
+            keyboardType = KeyboardType.Email,
+            error = state.emailError
         )
 
         // Password Field
@@ -41,7 +42,8 @@ fun LoginForm(
             placeholder = stringResource(R.string.password_placeholder),
             icon = R.drawable.ic_password,
             passwordVisible = state.passwordVisible,
-            onToggleVisibility = { onAction(LoginAction.TogglePassword) }
+            onToggleVisibility = { onAction(LoginAction.TogglePassword) },
+            error = state.passwordError
         )
 
         PrimaryTextButton(

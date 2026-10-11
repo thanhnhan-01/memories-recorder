@@ -23,6 +23,7 @@ fun AuthTextField(
     placeholder: String,
     icon: Int,
     keyboardType: KeyboardType = KeyboardType.Text,
+    error: String? = null
 ) {
     Column(
         verticalArrangement = Arrangement.spacedBy(MaterialTheme.dimens.spaceSm),
@@ -47,7 +48,9 @@ fun AuthTextField(
             placeholderSpacing = MaterialTheme.dimens.spaceSm,
             placeholderTextStyle = MaterialTheme.typography.bodyMedium.copy(fontSize = MaterialTheme.dimens.textLg),
             shape = RoundedCornerShape(MaterialTheme.dimens.radiusSm),
-            containerColor = MaterialTheme.colorScheme.surface
+            containerColor = MaterialTheme.colorScheme.surface,
+            isError = !error.isNullOrBlank(),
+            supportingText = error
         )
     }
 }

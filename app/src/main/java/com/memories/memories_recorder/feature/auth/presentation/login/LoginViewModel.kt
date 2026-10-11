@@ -5,6 +5,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.memories.memories_recorder.feature.auth.domain.validation.EmailValidator
+import com.memories.memories_recorder.feature.auth.domain.validation.PasswordValidator
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
@@ -46,10 +48,29 @@ class LoginViewModel : ViewModel() {
     }
 
     private fun onSubmit() {
+        val emailError = EmailValidator.validate(uiState.email)
+        val passwordError = PasswordValidator.validate(uiState.password)
+
+        uiState = uiState.copy(
+            emailError = emailError,
+            passwordError = passwordError
+        )
+
+        if (emailError != null || passwordError != null) {
+            return
+        }
+
         viewModelScope.launch {
-            uiState = uiState.copy(loginRequestState = LoginRequestState.Loading)
+            uiState = uiState.copy(
+                loginRequestState = LoginRequestState.Loading
+            )
+
             delay(1500)
-            uiState = uiState.copy(loginRequestState = LoginRequestState.Success)
+
+            uiState = uiState.copy(
+                loginRequestState = LoginRequestState.Success
+            )
+
             emit(LoginEvent.NavigateToHome)
         }
     }

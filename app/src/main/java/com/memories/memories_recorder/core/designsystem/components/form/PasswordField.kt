@@ -39,6 +39,8 @@ fun PasswordField(
     placeholderTextStyle: TextStyle = MaterialTheme.typography.bodyMedium,
     shape: Shape = RoundedCornerShape(MaterialTheme.dimens.radiusSm),
     containerColor: Color = MaterialTheme.colorScheme.surface,
+    isError: Boolean = false,
+    supportingText: String? = null
 ) {
     BaseTextField(
         value = value,
@@ -78,6 +80,8 @@ fun PasswordField(
         placeholderSpacing = placeholderSpacing,
         placeholderTextStyle = placeholderTextStyle,
         shape = shape,
-        containerColor = containerColor
+        containerColor = containerColor,
+        isError = isError,
+        supportingText = supportingText
     )
 }

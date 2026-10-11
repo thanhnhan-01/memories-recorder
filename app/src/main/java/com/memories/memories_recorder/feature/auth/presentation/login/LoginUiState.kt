@@ -11,8 +11,10 @@ data class LoginUiState(
     val email: String = "",
     val password: String = "",
     val passwordVisible: Boolean = false,
-    val loginRequestState: com.memories.memories_recorder.feature.auth.presentation.login.LoginRequestState = _root_ide_package_.com.memories.memories_recorder.feature.auth.presentation.login.LoginRequestState.Idle
-) {
+    val emailError: String? = null,
+    val passwordError: String? = null,
+    val loginRequestState: LoginRequestState = LoginRequestState.Idle,
+    ) {
     val isLoading: Boolean
         get() = loginRequestState is LoginRequestState.Loading
 
