@@ -22,11 +22,11 @@ class LoginViewModel : ViewModel() {
     fun onAction(action: LoginAction) {
         when (action) {
             is LoginAction.EmailChange -> {
-                uiState = uiState.copy(email = action.value)
+                uiState = uiState.copy(email = action.value, emailError = null)
             }
 
             is LoginAction.PasswordChange -> {
-                uiState = uiState.copy(password = action.value)
+                uiState = uiState.copy(password = action.value, passwordError = null)
             }
 
             LoginAction.TogglePassword -> {

@@ -15,6 +15,13 @@ data class RegisterUiState(
     val confirmPassword: String = "",
     val confirmPasswordVisible: Boolean = false,
     val isAcceptedTerms: Boolean = false,
+
+    val usernameError: String? = null,
+    val emailError: String? = null,
+    val passwordError: String? = null,
+    val confirmPasswordError: String? = null,
+    val termsError: String? = null,
+
     val registerRequestState: RegisterRequestState = RegisterRequestState.Idle
 ){
     val isLoading: Boolean
