@@ -20,15 +20,39 @@ class AuthRepositoryImpl(private val authApi: AuthApi): AuthRepository {
         return response.requireBody()
     }
 
-    private fun<T: Any> Response<T>.requireBody(): T {
-        if(!isSuccessful) {
+    private fun <T : Any> Response<T>.requireBody(): T {
+        if (!isSuccessful) {
+            val errorMessage = parseErrorMessage()
             throw AuthApiException(
-                message = "Request failed with HTTP ${code()}()"
+                message = errorMessage,
+                statusCode = code()
             )
         }
 
-        return body() ?: throw AuthApiException("Server returned an empty response.")
+        return body()
+            ?: throw AuthApiException(
+                message = "Server returned an empty response.",
+                statusCode = code()
+            )
+    }
+
+    private fun <T : Any> Response<T>.parseErrorMessage(): String {
+        val rawBody = errorBody()?.string()
+            ?: return "Request failed with HTTP ${code()}"
+
+        return try {
+            val json = org.json.JSONObject(rawBody)
+
+            when {
+                json.has("message") -> json.optString("message")
+                json.has("detail") -> json.optString("detail")
+                json.has("error") -> json.optString("error")
+                else -> "Request failed with HTTP ${code()}"
+            }
+        } catch (_: Exception) {
+            "Request failed with HTTP ${code()}"
+        }
     }
 }
 
-class AuthApiException(message: String): Exception(message)
+class AuthApiException(message: String, val statusCode: Int? = null): Exception(message)
